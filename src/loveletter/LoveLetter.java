@@ -47,7 +47,7 @@ public class LoveLetter{
     State gameState = new State(random, agents);//the game state
     State[] playerStates = new State[numPlayers];
     try{
-      for(int g = 0; g < 10; g++){
+      for(int g = 0; g < 100; g++){
         for(int i = 0; i<numPlayers; i++){
           playerStates[i] = gameState.playerState(i);
           agents[i].newRound(playerStates[i]);
@@ -89,7 +89,7 @@ System.out.println("New Round, scores are:\nplayer 0:"+gameState.score(0)+"\npla
    * The agent implementations should be in the default package.
    * */
   public static void main(String[] args){
-    Agent[] agents = {new agents.RandomAgent(),new agents.ReflexAgent(), new agents.MCAgent(), new agents.RandomAgent()};
+    Agent[] agents = {new agents.RandomAgent(),new agents.RandomAgent(),new agents.RandomAgent() , new agents.MCAgent()};
     LoveLetter env = new LoveLetter();
     StringBuffer log = new StringBuffer("A simple game for four random agents:\n");
     int[] results = env.playGame(agents);

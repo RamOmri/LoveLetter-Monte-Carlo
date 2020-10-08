@@ -52,7 +52,7 @@ public class MCAgent implements Agent{
    * */
   public Action playCard(Card c){
      Action act = null;
-    int hypotheticalStates = 500;
+    int hypotheticalStates = 1000;
     hypotheticalState[] states = new hypotheticalState[hypotheticalStates];
      ArrayList<move> moves = new ArrayList<move>();
      hypotheticalState ms = createState(c);
@@ -129,7 +129,7 @@ public class MCAgent implements Agent{
               //ending up being greater than the length of the deck in terminal nodes and needs to be fixed.
               if(currentNode.current.top[0] >= currentNode.current.deck.length){//System.out.println("111111111111111111111");
                   currentNode.terminal = true;
-              }else{//System.out.println("2222222222222222222222222");
+              }else{
                         moves.clear();  
                         moves = makeMoveList(currentNode.current.hand[myIndex], currentNode.current.deck[currentNode.current.top[0]], currentNode.current);
                         currentNode = expand(currentNode, moves);
@@ -431,7 +431,7 @@ public class MCAgent implements Agent{
                 }
 
                 public int compareTo(node other){
-                    double thisUCB = -100000 * this.UCB;
+                    double thisUCB = 100000 * this.UCB;
                     double otherUCB = 100000 * other.UCB;
                       if(this.visits == 0) return (int)thisUCB;
                       if(other.visits == 0) return (int)otherUCB;
