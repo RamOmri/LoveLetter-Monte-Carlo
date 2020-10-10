@@ -125,7 +125,7 @@ public class MCAgent implements Agent{
               currentNode = currentNode.children.peek();
             }
             if(currentNode.visits > 0 && !currentNode.terminal){
-              //this is just a band aid solution and may cause problems later on. Please note that top[0] for some reason keeps on
+           
               //ending up being greater than the length of the deck in terminal nodes and needs to be fixed.
               if(currentNode.current.top[0] >= currentNode.current.deck.length){//System.out.println("111111111111111111111");
                   currentNode.terminal = true;
