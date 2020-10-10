@@ -82,7 +82,7 @@ public class BorkedAgent implements Agent{
             act = Action.playPrincess(myIndex);
         }
         legal=true;
-      }catch(IllegalActionException e){/*do nothing, just try again*/}  
+      }catch(IllegalActionException e){/* try again*/}  
     }
     return act;
   }
